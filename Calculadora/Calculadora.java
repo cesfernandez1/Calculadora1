@@ -21,23 +21,29 @@ public class Calculadora
      */
     public Calculadora()
     {
-        // initialise instance variables
+        //initialise instance variables
         num1 = 0;
         num2 = 0;
-        op=op.SUMA;
+        op = op.POTENCIA;
+        
         
     }
+    
+    
     
     public void ponNum1(int n1)
     {
         // put your code here
-        this.num1=n1;
+      this.num1 = n1;
+
+        
     }
     
     public void ponNum2(int n2)
     {
         // put your code here
-        this.num2=n2;
+             this.num2 = n2;
+        
     }
 
     public void opera()
@@ -55,6 +61,9 @@ public class Calculadora
             case DIVIDE:
                 rdo=num1/num2;
                 break;
+             case POTENCIA:
+                rdo=(int)Math.pow(num1,num2);
+                break;
         }
     }
     public void ponOperacion(String opera){
@@ -71,6 +80,9 @@ public class Calculadora
             break;
         case "DIVIDE":
             op=op.DIVIDE;
+            break;
+        case "POTENCIA":
+            op=op.POTENCIA;
             break;
         }
     }

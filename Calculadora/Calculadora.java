@@ -25,6 +25,7 @@ public class Calculadora
         num1 = 0;
         num2 = 0;
         op = op.POTENCIA;
+       
         
         
     }
@@ -64,6 +65,9 @@ public class Calculadora
              case POTENCIA:
                 rdo=(int)Math.pow(num1,num2);
                 break;
+            case RAIZ:
+                rdo=(float)Math.pow(num1,1/num2);
+                break;
         }
     }
     public void ponOperacion(String opera){
@@ -84,6 +88,9 @@ public class Calculadora
         case "POTENCIA":
             op=op.POTENCIA;
             break;
+        case "RAIZ":
+            op=op.RAIZ;
+            break;
         }
     }
     public int dameResultado()
@@ -98,5 +105,6 @@ public class Calculadora
         System.out.println("Resta :"+ Integer.toString(num1-num2));
         System.out.println("Multiplica :" + Integer.toString(num1*num2));
         System.out.println("Divide :"+ Integer.toString(num1/num2));
+        System.out.println("Raiz :"+ Integer.toString(num1,1/num2));
     }
 }

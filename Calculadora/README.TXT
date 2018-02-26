@@ -4,9 +4,9 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
+PROJECT TITLE: Calculadora
 PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
+VERSION or DATE: 26/2/2018
+HOW TO START THIS PROJECT: 
+AUTHORS:Cesar Fernandes y Adrian Gonzalez
 USER INSTRUCTIONS:

@@ -124,9 +124,15 @@ public class Calculadora
         System.out.println("Multiplica :" + Double.toString(num1*num2));
         System.out.println("Divide :"+ Double.toString(num1/num2)); 
         System.out.println("Potencia:" + Double.toString(rdo=(int)Math.pow(num1,num2))); 
+<<<<<<< HEAD
         //Hay que cambiar esta linea(RAIZ) por otra , da resulados erroneos(Probablemente debido al tipo de datos)
         System.out.println("Raiz :" +Double.toString(rdo=(double)Math.pow(num1,1/num2))); 
         //Se añadira la opcion Factorial en el futuro
+=======
+        //Hay que cambiar esta linea(RAIZ) por otra , da resulados erroneos(Probablemente debido al tipo de datos))
+        System.out.println("Raiz :"+ Double.toString(num1,1/num2)); 
+        //System.out.println("Factorial :") En proceso de incluir las fatoriales
+>>>>>>> 1c410ca4152aa3ef45401789476cb27728439552
         System.out.println("LOG : " +Double.toString(Math.log10(num1)));
     }
 }

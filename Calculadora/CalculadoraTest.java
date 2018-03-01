@@ -16,8 +16,11 @@ public class CalculadoraTest
     /**
      * Default constructor for test class CalculadoraTest
      */
+    Calculadora calculadora;
+    
     public CalculadoraTest()
     {
+      
     }
 
     /**
@@ -28,6 +31,7 @@ public class CalculadoraTest
     @Before
     public void setUp()
     {
+       calculadora = new Calculadora();
     }
 
     /**
@@ -39,4 +43,14 @@ public class CalculadoraTest
     public void tearDown()
     {
     }
+    @Test
+    public void suma(){
+      //prueba para ver si suma correctamente
+      calculadora.ponNum1(2);
+      calculadora.ponNum2(2);
+      calculadora.ponOperacion("SUMA");
+      calculadora.opera();
+      assertEquals(4 , calculadora.dameResultado(),0.1);//dado que trabajamos con double es necesario indicar el margen de error , en este caso es de 0.1
+    }
 }
+    

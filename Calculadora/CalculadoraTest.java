@@ -52,5 +52,30 @@ public class CalculadoraTest
       calculadora.opera();
       assertEquals(4 , calculadora.dameResultado(),0.1);//dado que trabajamos con double es necesario indicar el margen de error , en este caso es de 0.1
     }
+    public void suma(){
+        //Prueba de suma con el Num1 negativo
+        calculadora.ponNum1(-1);
+        calculadora.ponNum2(5);
+        calculadora.ponOperacion("SUMA");
+        calculador.opera();
+        assertEquals(4 , calculadora.dameResultado(),0.1);
+    }
+    public void resta(){
+        //prueba de resta
+        calculadora.ponNum1(5);
+        calculadora.ponNum2(3);
+        calculadora.ponOperacion("RESTA");
+        calculadora.opera();
+        assertEquals(2 , calculadora.dameResultado(),0.1);
+    }
+    public void resta(){
+        //prueba de resta con Num1 negativo
+        calculadora.ponNum1(-2);
+        calculadora.ponNum2(6);
+        calculadora.ponOperacion("RESTA");
+        calculadora.opera();
+        assertEquals(4 , calculadora.dameResultado(),0.1);
+    }
 }
+
     

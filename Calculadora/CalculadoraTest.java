@@ -8,8 +8,8 @@ import org.junit.Test;
 /**
  * The test class CalculadoraTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  Cesar Fernandes y Adrian Gonzalez
+ * @version 4/3/2018
  */
 public class CalculadoraTest
 {
@@ -43,39 +43,124 @@ public class CalculadoraTest
     public void tearDown()
     {
     }
+       @Test
+    public void Suma()
+    {
+     //Se creado Suma por si queremos hacer todas las pruebas solo de Suma, de todas formas las pruebas estaran separadas para poder localizar errores con mayor facilidad
+     Probar_suma();
+     ProbarSuma_decimales();
+     ProbarSuma_Negativos();
+     ProbarSuma_1Negativo();
+     Suma_Valor_maximo();
+     ProbarSuma_con_operaciones();
+    }
     @Test
-    public void suma(){
+    public void Probar_suma(){
       //prueba para ver si suma correctamente
       calculadora.ponNum1(2);
       calculadora.ponNum2(2);
       calculadora.ponOperacion("SUMA");
       calculadora.opera();
-      assertEquals(4 , calculadora.dameResultado(),0.1);//dado que trabajamos con double es necesario indicar el margen de error , en este caso es de 0.1
+      assertEquals(4 , calculadora.dameResultado(),0.001);//dado que trabajamos con double es necesario indicar el margen de error , en este caso es de 0.001
     }
-    public void suma(){
-        //Prueba de suma con el Num1 negativo
-        calculadora.ponNum1(-1);
-        calculadora.ponNum2(5);
-        calculadora.ponOperacion("SUMA");
-        calculador.opera();
-        assertEquals(4 , calculadora.dameResultado(),0.1);
+    
+      @Test
+    public void ProbarSuma_decimales()
+    {
+      //Prueba de suma con el Num1 negativo
+      calculadora.ponNum1(3.2);
+      calculadora.ponNum2(4.6);
+      calculadora.ponOperacion("SUMA");
+      calculadora.opera();
+      assertEquals(7.8 , calculadora.dameResultado(),0.001);    
     }
+    
+    @Test
+    public void ProbarSuma_Negativos()
+    {
+      //Prueba de suma con el Num1 negativo
+      calculadora.ponNum1(-3.2);
+      calculadora.ponNum2(-4.6);
+      calculadora.ponOperacion("SUMA");
+      calculadora.opera();
+      assertEquals(-7.8 , calculadora.dameResultado(),0.001);    
+    }
+    
+    @Test
+    public void ProbarSuma_1Negativo()
+    {
+      //Prueba de suma con el Num1 negativo
+      calculadora.ponNum1(-1);
+      calculadora.ponNum2(5);
+      calculadora.ponOperacion("SUMA");
+      calculadora.opera();
+      assertEquals(4 , calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void ProbarSuma_con_operaciones()
+    {
+      //Prueba de suma con el Num1 negativo
+      calculadora.ponNum1(-1*2); 
+      calculadora.ponNum2(5);
+      calculadora.ponOperacion("SUMA");
+      calculadora.opera();
+      assertEquals(3 , calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void Suma_Valor_maximo()
+    {
+      //Prueba de suma con el MAX_VALUES
+      //Tenemos que cambiar el codigo para que no pueda superar el valor maximo
+      calculadora.ponNum1(Double.MAX_VALUE);
+      calculadora.ponNum2(Double.MAX_VALUE);
+      calculadora.ponOperacion("SUMA");
+      calculadora.opera();
+      assertEquals(Double.POSITIVE_INFINITY, calculadora.dameResultado(),0.001);    
+    }
+    
+    
+    
+    @Test
     public void resta(){
         //prueba de resta
         calculadora.ponNum1(5);
         calculadora.ponNum2(3);
         calculadora.ponOperacion("RESTA");
         calculadora.opera();
-        assertEquals(2 , calculadora.dameResultado(),0.1);
+        assertEquals(2 , calculadora.dameResultado(),0.001);
+       
     }
-    public void resta(){
-        //prueba de resta con Num1 negativo
-        calculadora.ponNum1(-2);
-        calculadora.ponNum2(6);
+    @Test
+    public void Probar_resta_Negativos()
+    {
+        //Prueba de resta con el Num1 negativo
+        calculadora.ponNum1(-1);
+        calculadora.ponNum2(5);
         calculadora.ponOperacion("RESTA");
         calculadora.opera();
-        assertEquals(4 , calculadora.dameResultado(),0.1);
+        assertEquals(-6, calculadora.dameResultado(),0.001);    
+    }
+        @Test
+    public void Probar_resta_Negativos2()
+    {
+        //Prueba de resta con el Num1 negativo
+        calculadora.ponNum1(1);
+        calculadora.ponNum2(-5);
+        calculadora.ponOperacion("RESTA");
+        calculadora.opera();
+        assertEquals(6, calculadora.dameResultado(),0.001);    
+    }
+     @Test
+    public void RESTA_Valor_maximo()
+    {
+      //Prueba de suma con el MAX_VALUES
+      calculadora.ponNum1(Double.MAX_VALUE);
+      calculadora.ponNum2(Double.MAX_VALUE);
+      calculadora.ponOperacion("RESTA");
+      calculadora.opera();
+      assertEquals(0, calculadora.dameResultado(),0.001);    
     }
 }
 
-    
+
+

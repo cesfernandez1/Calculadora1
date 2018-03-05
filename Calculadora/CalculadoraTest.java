@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * The test class CalculadoraTest.
  *
- * @author  Cesar Fernandes y Adrian Gonzalez
+ * @author  Cesar Fernandez y Adrian Gonzalez
  * @version 5/3/2018
  */
 public class CalculadoraTest
@@ -229,7 +229,69 @@ public class CalculadoraTest
       calculadora.opera();
       assertEquals(Double.POSITIVE_INFINITY, calculadora.dameResultado(),0.001);    
     }
+    @Test
+    public void DIVIDIR()
+    { 
+      DIVIDIR_NUM_ENTEROS();
+      DIVIDIR_NUM_DECIMALES();
+      DIVIDIR_1NUM_NEGATIVO();
+      DIVIDIR_2NUM_NEGATIVOS();
+      DIVIDIR_CON_OPERACIONES();
+      DIVIDIR_VALOR_MAX();
+    }
+    @Test 
+    public void DIVIDIR_NUM_ENTEROS()
+    {
+      //Division de numeros enteros
+      calculadora.ponNum1(10);
+      calculadora.ponNum2(2);
+      calculadora.ponOperacion("DIVIDE");
+      calculadora.opera();
+      assertEquals(5 , calculadora.dameResultado(),0.001);
+    }
+    @Test 
+    public void DIVIDIR_NUM_DECIMALES()
+    {
+      //Division con numeros decimales
+      calculadora.ponNum1(13.75);
+      calculadora.ponNum2(5.5);
+      calculadora.ponOperacion("DIVIDE");
+      assertEquals( 2.5 , calculadora.dameResultado(),0.001);
+    }
+    @Test 
+    public void DIVIDIR_1NUM_NEGATIVO(){
+      //Division con un numero negativo y el otro positivo
+      calculadora.ponNum1(20);
+      calculadora.ponNum2(-4);
+      calculadora.ponOperacion("DIVIDE");
+      assertEquals( -5 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void DIVIDIR_2NUM_NEGATIVOS(){
+      //Division con los dos numeros negativos
+      calculadora.ponNum1(-20);
+      calculadora.ponNum2(-4);
+      calculadora.ponOperacion("DIVIDE");
+      assertEquals( 5 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void DIVIDIR_CON_OPERACIONES(){
+      //Division con operaciones de por medio
+      calculadora.ponNum1(20+10);
+      calculadora.ponNum2(3*5);
+      calculadora.ponOperacion("DIVIDE");
+      assertEquals( 2 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void DIVIDIR_VALOR_MAX(){
+      //Division de valor maximo entre valor maximo
+      calculadora.ponNum1(Double.MAX_VALUE);
+      calculadora.ponNum2(Double.MAX_VALUE);
+      calculadora.ponOperacion("DIVIDE");
+      assertEquals( 1 , calculadora.dameResultado(),0.001);
+    }
 }
+
 
 
 

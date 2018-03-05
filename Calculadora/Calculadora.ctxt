@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Calculadora
+comment0.text=\n\ Write\ a\ description\ of\ class\ Calculadora\ here.\n\ \n\ @author\ \ Cesar\ Fernandes\ y\ Adrian\ Gonzalez\n\ @version\ 5/3/2018\n
+comment1.params=
+comment1.target=Calculadora()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Calculadora\n
+comment2.params=n1
+comment2.target=void\ ponNum1(double)
+comment3.params=n2
+comment3.target=void\ ponNum2(double)
+comment4.params=base
+comment4.target=void\ ponBase(double)
+comment5.params=exponente
+comment5.target=void\ ponExponente(double)
+comment6.params=
+comment6.target=void\ opera()
+comment7.params=opera
+comment7.target=void\ ponOperacion(java.lang.String)
+comment8.params=
+comment8.target=double\ dameResultado()
+comment9.params=
+comment9.target=void\ muestraTodosResultados()
+numComments=10

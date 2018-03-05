@@ -9,7 +9,7 @@ import org.junit.Test;
  * The test class CalculadoraTest.
  *
  * @author  Cesar Fernandes y Adrian Gonzalez
- * @version 4/3/2018
+ * @version 5/3/2018
  */
 public class CalculadoraTest
 {
@@ -118,8 +118,6 @@ public class CalculadoraTest
       assertEquals(Double.POSITIVE_INFINITY, calculadora.dameResultado(),0.001);    
     }
     
-    
-    
     @Test
     public void resta(){
         //prueba de resta
@@ -140,7 +138,7 @@ public class CalculadoraTest
         calculadora.opera();
         assertEquals(-6, calculadora.dameResultado(),0.001);    
     }
-        @Test
+    @Test
     public void Probar_resta_Negativos2()
     {
         //Prueba de resta con el Num1 negativo
@@ -153,12 +151,83 @@ public class CalculadoraTest
      @Test
     public void RESTA_Valor_maximo()
     {
-      //Prueba de suma con el MAX_VALUES
+      //Prueba de resta con el MAX_VALUES
       calculadora.ponNum1(Double.MAX_VALUE);
       calculadora.ponNum2(Double.MAX_VALUE);
       calculadora.ponOperacion("RESTA");
       calculadora.opera();
       assertEquals(0, calculadora.dameResultado(),0.001);    
+    }
+        @Test
+    public void MULTIPLICAR()
+    { 
+      MULTIPLICAR_NUM_ENTEROS();
+      MULTIPLICAR_NUM_DECIMALES();
+      MULTIPLICAR_NUM_NEGATIVOS();
+      MULTIPLICAR_2NUM_NEGATIVOS();
+      MULTIPLICAR_CON_OPERACIONES();
+      MULTIPLICAR_VALOR_MAX();
+        
+    }
+    @Test
+    public void MULTIPLICAR_NUM_ENTEROS()
+    {
+      //Prueba de multiplicacion con numeros enteros
+      calculadora.ponNum1(2);
+      calculadora.ponNum2(4);
+      calculadora.ponOperacion("MULTIPLICA");
+      calculadora.opera();
+      assertEquals(8, calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void MULTIPLICAR_NUM_DECIMALES()
+    {
+      //Prueba de multiplicacion con numeros decimales
+      calculadora.ponNum1(2.2);
+      calculadora.ponNum2(4.4);
+      calculadora.ponOperacion("MULTIPLICA");
+      calculadora.opera();
+      assertEquals(9.68, calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void MULTIPLICAR_NUM_NEGATIVOS()
+    {
+      //Prueba de multiplicacion con un numero negativo
+      calculadora.ponNum1(-2.2);
+      calculadora.ponNum2(4.4);
+      calculadora.ponOperacion("MULTIPLICA");
+      calculadora.opera();
+      assertEquals(-9.68, calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void MULTIPLICAR_2NUM_NEGATIVOS()
+    {
+      //Prueba de multiplicacion con dos numero negativo
+      calculadora.ponNum1(-2.2);
+      calculadora.ponNum2(-4.4);
+      calculadora.ponOperacion("MULTIPLICA");
+      calculadora.opera();
+      assertEquals(9.68, calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void MULTIPLICAR_CON_OPERACIONES()
+    {
+      //Prueba de multiplicacion con operaciones dentro del apartado de NUM1 y NUM2
+      calculadora.ponNum1(2+6);
+      calculadora.ponNum2(2*2);
+      calculadora.ponOperacion("MULTIPLICA");
+      calculadora.opera();
+      assertEquals(32, calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void MULTIPLICAR_VALOR_MAX()
+    {
+      //Prueba de multiplicacion con el valor Maximo, esto no deberia permitirlo asi que en el futuro cambiaremos el codigo para que no lo permita
+      calculadora.ponNum1(Double.MAX_VALUE);
+      calculadora.ponNum2(Double.MAX_VALUE);
+      calculadora.ponOperacion("MULTIPLICA");
+      calculadora.opera();
+      assertEquals(Double.POSITIVE_INFINITY, calculadora.dameResultado(),0.001);    
     }
 }
 

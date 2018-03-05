@@ -1,14 +1,14 @@
 #BlueJ package file
-dependency1.from=Calculadora
-dependency1.to=Operacion
+dependency1.from=CalculadoraTest
+dependency1.to=Calculadora
 dependency1.type=UsesDependency
-dependency2.from=CalculadoraTest
-dependency2.to=Calculadora
+dependency2.from=Calculadora
+dependency2.to=Operacion
 dependency2.type=UsesDependency
-editor.fx.0.height=1053
+editor.fx.0.height=1018
 editor.fx.0.width=1920
 editor.fx.0.x=0
-editor.fx.0.y=27
+editor.fx.0.y=28
 objectbench.height=190
 objectbench.width=776
 package.divider.horizontal=0.6

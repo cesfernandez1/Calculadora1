@@ -26,8 +26,8 @@ public class Calculadora
     public Calculadora()
     {
         //initialise instance variables
-        num1 = Double.MAX_VALUE;
-        num2 = Double.MAX_VALUE;
+        num1 = 0;
+        num2 = 0;
         op = op.SUMA; 
 
         
@@ -71,8 +71,6 @@ public class Calculadora
             
             case SUMA:
                 rdo=num1+num2;
-                if(rdo == MAX_VALUE + 1 )
-                
                 break;
             case RESTA:
                 rdo=num1-num2;

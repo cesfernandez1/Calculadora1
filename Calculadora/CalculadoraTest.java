@@ -117,7 +117,14 @@ public class CalculadoraTest
       calculadora.opera();
       assertEquals(Double.POSITIVE_INFINITY, calculadora.dameResultado(),0.001);    
     }
-    
+        @Test
+    public void RESTA(){
+       resta(); 
+       Probar_resta_Negativos();
+       Probar_resta_Negativos2();
+       RESTA_Valor_maximo();
+       RESTA_Valor_minimo();
+    }
     @Test
     public void resta(){
         //prueba de resta
@@ -157,6 +164,16 @@ public class CalculadoraTest
       calculadora.ponOperacion("RESTA");
       calculadora.opera();
       assertEquals(0, calculadora.dameResultado(),0.001);    
+    }
+     @Test
+    public void RESTA_Valor_minimo()
+    {
+      //Prueba de resta con el valor minimo
+      calculadora.ponNum1(-Double.MAX_VALUE);
+      calculadora.ponNum2(Double.MAX_VALUE);
+      calculadora.ponOperacion("RESTA");
+      calculadora.opera();
+      assertEquals(Double.NEGATIVE_INFINITY, calculadora.dameResultado(),0.001);    
     }
         @Test
     public void MULTIPLICAR()
@@ -256,6 +273,7 @@ public class CalculadoraTest
       calculadora.ponNum1(13.75);
       calculadora.ponNum2(5.5);
       calculadora.ponOperacion("DIVIDE");
+      calculadora.opera();
       assertEquals( 2.5 , calculadora.dameResultado(),0.001);
     }
     @Test 
@@ -264,6 +282,7 @@ public class CalculadoraTest
       calculadora.ponNum1(20);
       calculadora.ponNum2(-4);
       calculadora.ponOperacion("DIVIDE");
+      calculadora.opera();
       assertEquals( -5 , calculadora.dameResultado(),0.001);
     }
     @Test
@@ -272,6 +291,7 @@ public class CalculadoraTest
       calculadora.ponNum1(-20);
       calculadora.ponNum2(-4);
       calculadora.ponOperacion("DIVIDE");
+      calculadora.opera();
       assertEquals( 5 , calculadora.dameResultado(),0.001);
     }
     @Test
@@ -280,6 +300,7 @@ public class CalculadoraTest
       calculadora.ponNum1(20+10);
       calculadora.ponNum2(3*5);
       calculadora.ponOperacion("DIVIDE");
+      calculadora.opera();
       assertEquals( 2 , calculadora.dameResultado(),0.001);
     }
     @Test
@@ -288,6 +309,7 @@ public class CalculadoraTest
       calculadora.ponNum1(Double.MAX_VALUE);
       calculadora.ponNum2(Double.MAX_VALUE);
       calculadora.ponOperacion("DIVIDE");
+      calculadora.opera();
       assertEquals( 1 , calculadora.dameResultado(),0.001);
     }
 }

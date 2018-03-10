@@ -18,6 +18,4 @@ comment7.params=opera
 comment7.target=void\ ponOperacion(java.lang.String)
 comment8.params=
 comment8.target=double\ dameResultado()
-comment9.params=
-comment9.target=void\ muestraTodosResultados()
-numComments=10
+numComments=9

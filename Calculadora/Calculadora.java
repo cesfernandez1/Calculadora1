@@ -133,19 +133,19 @@ public class Calculadora
         // put your code here
         return rdo;
     }
-    
-    public void muestraTodosResultados(){
-        System.out.println("Num1="+Double.toString(num1)+" Num2=" + Double.toString(num2));
-        System.out.println("Suma :" + Double.toString(num1+num2));
-        System.out.println("Resta :"+ Double.toString(num1-num2));
-        System.out.println("Multiplica :" + Double.toString(num1*num2));
-        System.out.println("Divide :"+ Double.toString(num1/num2)); 
-        System.out.println("Potencia:" + Double.toString(rdo=(int)Math.pow(num1,num2))); 
+    //Dado que este punto solo lo utilizamos en pruebas lo tendremos comentado
+    //public void muestraTodosResultados(){
+        //System.out.println("Num1="+Double.toString(num1)+" Num2=" + Double.toString(num2));
+        //System.out.println("Suma :" + Double.toString(num1+num2));
+        //System.out.println("Resta :"+ Double.toString(num1-num2));
+        //System.out.println("Multiplica :" + Double.toString(num1*num2));
+        //System.out.println("Divide :"+ Double.toString(num1/num2)); 
+        //System.out.println("Potencia:" + Double.toString(rdo=(int)Math.pow(num1,num2))); 
 
         //Hay que cambiar esta linea(RAIZ) por otra , da resulados erroneos(Probablemente debido al tipo de datos)
-        System.out.println("Raiz :" +Double.toString(rdo=(double)Math.pow(num1,1/num2))); 
+        //System.out.println("Raiz :" +Double.toString(rdo=(double)Math.pow(num1,1/num2))); 
         //Se añadira la opcion Factorial en el futuro
         //System.out.println("Factorial :") En proceso de incluir las fatoriales
-        System.out.println("LOG : " +Double.toString(Math.log10(num1)));
-    }
+        //System.out.println("LOG : " +Double.toString(Math.log10(num1)));
+    //}
 }

@@ -351,35 +351,65 @@ public class CalculadoraTest
     }
     @Test
     public void POTENCIA_EXPO_NEGATIVO(){
-        calculadora.ponBase(10);
-        calculadora.ponExponente(-2);
-        calculadora.ponOperacion("POTENCIA");
-        calculadora.opera();
-        assertEquals( 0.01 , calculadora.dameResultado(),0.001);
+     calculadora.ponBase(10);
+     calculadora.ponExponente(-2);
+     calculadora.ponOperacion("POTENCIA");
+     calculadora.opera();
+     assertEquals( 0.01 , calculadora.dameResultado(),0.001);
     }
     @Test
     public void POTENCIA_NUM_NEGATIVOS(){
-        calculadora.ponBase(-10);
-        calculadora.ponExponente(-2);
-        calculadora.ponOperacion("POTENCIA");
-        calculadora.opera();
-        assertEquals( -0.01 , calculadora.dameResultado(),0.001);
+     calculadora.ponBase(-10);
+     calculadora.ponExponente(-2);
+     calculadora.ponOperacion("POTENCIA");
+     calculadora.opera();
+     assertEquals( -0.01 , calculadora.dameResultado(),0.001);
     }
     @Test
     public void POTENCIA_BASE_OPERACION(){
-        calculadora.ponBase(5+5);
-        calculadora.ponExponente(2);
-        calculadora.ponOperacion("POTENCIA");
-        calculadora.opera();
-        assertEquals( 100 , calculadora.dameResultado(),0.001);
+     calculadora.ponBase(5+5);
+     calculadora.ponExponente(2);
+     calculadora.ponOperacion("POTENCIA");
+     calculadora.opera();
+     assertEquals( 100 , calculadora.dameResultado(),0.001);
     }
     @Test
     public void POTENCIA_EXPO_OPERACION(){
-        calculadora.ponBase(10);
-        calculadora.ponExponente(5-3);
-        calculadora.ponOperacion("POTENCIA");
-        calculadora.opera();
-        assertEquals( 100 , calculadora.dameResultado(),0.001);
+     calculadora.ponBase(10);
+     calculadora.ponExponente(5-3);
+     calculadora.ponOperacion("POTENCIA");
+     calculadora.opera();
+     assertEquals( 100 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void RAIZ(){
+     RAIZ_NUM_ENTERO();
+     RAIZ_NUM_DECIMAL();
+     RAIZ_CON_OPERACION();
+    }
+    @Test 
+    public void RAIZ_NUM_ENTERO(){
+     calculadora.ponNum1(9);
+     calculadora.ponNum2(2);
+     calculadora.ponOperacion("RAIZ");
+     calculadora.opera();
+     assertEquals( 3 , calculadora.dameResultado(),0.001);
+    }    
+    @Test
+    public void RAIZ_NUM_DECIMAL(){
+     calculadora.ponNum1(12.5);
+     calculadora.ponNum2(2);
+     calculadora.ponOperacion("RAIZ");
+     calculadora.opera();
+     assertEquals(  3.53 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void RAIZ_CON_OPERACION(){
+     calculadora.ponNum1(5+4);
+     calculadora.ponNum2(2);
+     calculadora.ponOperacion("RAIZ");
+     calculadora.opera();
+     assertEquals( 3 , calculadora.dameResultado(),0.001);
     }
     
     

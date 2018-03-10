@@ -312,6 +312,77 @@ public class CalculadoraTest
       calculadora.opera();
       assertEquals( 1 , calculadora.dameResultado(),0.001);
     }
+    @Test
+    public void POTENCIA()
+    {
+      POTENCIA_NUM_ENTERO();
+      POTENCIA_NUM_DECIMAL();
+      POTENCIA_BASE_NEGATIVA();
+      POTENCIA_EXPO_NEGATIVO();
+      POTENCIA_NUM_NEGATIVOS();
+      POTENCIA_BASE_OPERACION();
+      POTENCIA_EXPO_OPERACION();
+    }
+    @Test
+    public void POTENCIA_NUM_ENTERO(){
+     //Potencia de dos numeros enteros
+     calculadora.ponBase(10);
+     calculadora.ponExponente(2);
+     calculadora.ponOperacion("POTENCIA");
+     calculadora.opera();
+     assertEquals( 100 , calculadora.dameResultado(),0.001);//Salta error en assertEquals no es compatible 
+    }
+    @Test
+    public void POTENCIA_NUM_DECIMAL(){
+     //Potencia con numero decimal de base 
+     calculadora.ponBase(10.5);
+     calculadora.ponExponente(2);
+     calculadora.ponOperacion("POTENCIA");
+     calculadora.opera();
+     assertEquals( 110.25 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void POTENCIA_BASE_NEGATIVA(){
+     calculadora.ponBase(-10);
+     calculadora.ponExponente(2);
+     calculadora.ponOperacion("POTENCIA");
+     calculadora.opera();
+     assertEquals( 100 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void POTENCIA_EXPO_NEGATIVO(){
+        calculadora.ponBase(10);
+        calculadora.ponExponente(-2);
+        calculadora.ponOperacion("POTENCIA");
+        calculadora.opera();
+        assertEquals( 0.01 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void POTENCIA_NUM_NEGATIVOS(){
+        calculadora.ponBase(-10);
+        calculadora.ponExponente(-2);
+        calculadora.ponOperacion("POTENCIA");
+        calculadora.opera();
+        assertEquals( -0.01 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void POTENCIA_BASE_OPERACION(){
+        calculadora.ponBase(5+5);
+        calculadora.ponExponente(2);
+        calculadora.ponOperacion("POTENCIA");
+        calculadora.opera();
+        assertEquals( 100 , calculadora.dameResultado(),0.001);
+    }
+    @Test
+    public void POTENCIA_EXPO_OPERACION(){
+        calculadora.ponBase(10);
+        calculadora.ponExponente(5-3);
+        calculadora.ponOperacion("POTENCIA");
+        calculadora.opera();
+        assertEquals( 100 , calculadora.dameResultado(),0.001);
+    }
+    
+    
 }
 
 

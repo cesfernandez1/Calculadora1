@@ -9,7 +9,7 @@ import org.junit.Test;
  * The test class CalculadoraTest.
  *
  * @author  Cesar Fernandez y Adrian Gonzalez
- * @version 5/3/2018
+ * @version 11/3/2018
  */
 public class CalculadoraTest
 {
@@ -414,8 +414,33 @@ public class CalculadoraTest
      calculadora.opera();
      assertEquals( 3 , calculadora.dameResultado(),0.01);
     }
-    
-    
+    @Test 
+    public void LOG(){
+     LOG_NUM_ENTERO();
+     LOG_NUM_DECIMAL();
+     LOG_CON_OPERACION();
+    }
+    @Test
+    public void LOG_NUM_ENTERO(){
+     calculadora.ponNum1(100);
+     calculadora.ponOperacion("LOG");
+     calculadora.opera();
+     assertEquals( 2 , calculadora.dameResultado(),0.01);
+    }
+    @Test
+    public void LOG_NUM_DECIMAL(){
+     calculadora.ponNum1(20.5);
+     calculadora.ponOperacion("LOG");
+     calculadora.opera();
+     assertEquals( 1.31 , calculadora.dameResultado(),0.01);
+    }
+    @Test 
+    public void LOG_CON_OPERACION(){
+     calculadora.ponNum1(70+30);
+     calculadora.ponOperacion("LOG");
+     calculadora.opera();
+     assertEquals( 2 , calculadora.dameResultado(),0.01);
+    }  
 }
 
 

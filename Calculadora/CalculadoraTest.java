@@ -53,6 +53,7 @@ public class CalculadoraTest
      ProbarSuma_1Negativo();
      Suma_Valor_maximo();
      ProbarSuma_con_operaciones();
+     Suma_Valor_minimo();
     }
     @Test
     public void Probar_suma(){
@@ -116,6 +117,16 @@ public class CalculadoraTest
       calculadora.ponOperacion("SUMA");
       calculadora.opera();
       assertEquals(Double.POSITIVE_INFINITY, calculadora.dameResultado(),0.001);    
+    }
+    @Test
+    public void Suma_Valor_minimo()
+    {
+      //Prueba de resta con el valor minimo
+      calculadora.ponNum1(-Double.MAX_VALUE);
+      calculadora.ponNum2(-Double.MAX_VALUE);
+      calculadora.ponOperacion("SUMA");
+      calculadora.opera();
+      assertEquals(Double.NEGATIVE_INFINITY, calculadora.dameResultado(),0.001);    
     }
         @Test
     public void RESTA(){
@@ -184,7 +195,7 @@ public class CalculadoraTest
       MULTIPLICAR_2NUM_NEGATIVOS();
       MULTIPLICAR_CON_OPERACIONES();
       MULTIPLICAR_VALOR_MAX();
-        
+      MULTIPLICAR_VALOR_MINIMO();
     }
     @Test
     public void MULTIPLICAR_NUM_ENTEROS()
@@ -245,6 +256,16 @@ public class CalculadoraTest
       calculadora.ponOperacion("MULTIPLICA");
       calculadora.opera();
       assertEquals(Double.POSITIVE_INFINITY, calculadora.dameResultado(),0.001);    
+    }
+        @Test
+    public void MULTIPLICAR_VALOR_MINIMO()
+    {
+      //Prueba de multiplicacion con el valor Maximo, esto no deberia permitirlo asi que en el futuro cambiaremos el codigo para que no lo permita
+      calculadora.ponNum1(-Double.MAX_VALUE);
+      calculadora.ponNum2(2);
+      calculadora.ponOperacion("MULTIPLICA");
+      calculadora.opera();
+      assertEquals(Double.NEGATIVE_INFINITY, calculadora.dameResultado(),0.001);
     }
     @Test
     public void DIVIDIR()

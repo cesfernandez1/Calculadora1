@@ -6,7 +6,7 @@ all he/she needs to know. The comments should usually include at least:
 
 PROJECT TITLE: Calculadora
 PURPOSE OF PROJECT:
-VERSION or DATE: 26/2/2018
+VERSION or DATE: 12/3/2018
 HOW TO START THIS PROJECT: 
 AUTHORS:Cesar Fernandes y Adrian Gonzalez
 USER INSTRUCTIONS:

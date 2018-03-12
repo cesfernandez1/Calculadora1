@@ -3,7 +3,7 @@
  * Write a description of class Calculadora here.
  * 
  * @author  Cesar Fernandes y Adrian Gonzalez
- * @version 11/3/2018
+ * @version 12/3/2018
  */
 
 
@@ -18,7 +18,6 @@ public class Calculadora
     private double base,exponente;//Se crea tanto base como exponente para facilitar modificaciones en el apartado Potencia
     private Operacion op;
     private double MAX_VALUE = Double.MAX_VALUE;
-    private char error = 0;
 
     /**
      * Constructor for objects of class Calculadora
@@ -64,7 +63,6 @@ public class Calculadora
              this.exponente = exponente;
         
     }
-
     public void opera()
     {
         switch(op){
@@ -88,10 +86,13 @@ public class Calculadora
                 rdo=(double)Math.pow(num1,1/num2); 
                 break;
             case FACTORIAL:
-            //En en futuro haremos cambios en los apartados PonNum1, PonNum2 y otros apartados del programa para que solo pregunte 1 numero
-                for(int Factorial = 1 ; Factorial <=num1; num1++)
-                num1 *= Factorial;
-                break;  
+            //Este apartado se ha corregido, ahora funciona
+            double temporal= 1;
+            for(int Factorial = 1 ; Factorial <=num1; num1--){
+            temporal*=num1;
+            rdo=temporal;
+        }
+            break;
             case LOG:
                     rdo=Math.log10(num1);
                     break;
